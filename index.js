@@ -1,5 +1,6 @@
 const express = require('express');
-const app = express();         
+const app = express();  
+const cors = require('cors');       
 const bodyParser = require('body-parser');
 const port = 3000; //porta padrão
 const sql = require('mssql');
@@ -24,6 +25,11 @@ const sql = require('mssql');
    }};
 
 //configurando o body parser para pegar POSTS mais tarde
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
