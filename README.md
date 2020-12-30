@@ -1,2 +1,2 @@
 # NodeExpressApi
-Projeto para estudo do Node.js
+Projeto API para estudo do Node.js
